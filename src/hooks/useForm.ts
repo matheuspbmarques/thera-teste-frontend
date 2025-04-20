@@ -137,10 +137,10 @@ export default function useForm <Form extends object> (check:UseFormCheck<Form>)
                     };
 
                     case 'decimal': {
-                        if (value.toString() === '' || isNaN(parseFloat(value.toString()))) {
+                        if (value.toString() === '' || isNaN(parseFloat(value.toString().replaceAll('.', '').replace(',', '.')))) {
                             formData[inputName] = undefined;
                         } else {
-                            formData[inputName] = parseFloat(value.toString());
+                            formData[inputName] = parseFloat(value.toString().replaceAll('.', '').replace(',', '.'));
                         };
 
                         break;
