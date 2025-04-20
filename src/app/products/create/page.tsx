@@ -13,7 +13,7 @@ import { ProductsPostProductsBody } from "@/@types/apis/api/Product.type";
 import useMessage from "@/hooks/useMessage";
 import Alert from "@/components/ui/Alert";
 import Image from "next/image";
-import addProductIllustration from '@/assets/illustrations/add-product.webp';
+import newProductIllustration from '@/assets/illustrations/new-product.svg'
 
 type Form = {
     name: string,
@@ -68,7 +68,7 @@ export default function ProductsCreate () {
                 </header>
                 <div className="flex items-center gap-4">
                     <div className="hidden sm:flex sm:flex-1 sm:h-80 sm:items-center sm:justify-center">
-                        <Image alt="Ilustração de formulário de adição de produtos" src={addProductIllustration} priority />
+                        <Image alt="Ilustração de formulário de adição de produtos" src={newProductIllustration} priority />
                     </div>
                     <form onSubmit={handleOnSubmit(submit.mutate)} className="flex flex-col gap-4 flex-1">
                         <div className="flex flex-col gap-2">
