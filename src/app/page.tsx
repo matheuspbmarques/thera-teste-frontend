@@ -15,20 +15,37 @@ import Image from "next/image";
 import { ProductsGetProductsResponse } from "@/@types/apis/api/Product.type";
 import api from "@/apis/api";
 import { Product } from "@/@types/database/Product.type";
+import InputSelect from "@/components/form/InputSelect";
+import { JsonServerPaginateReturn } from "@/@types/libs/jsonServer.type";
+import Pagination from "./(components)/Pagination";
 
 type SearchForm = {
 	search?: string
 };
 type FilterForm = {
 	minPrice?: number,
-	maxPrice?: number
+	maxPrice?: number,
+	priceOrder?: 'minToMax' | 'maxToMin'
 };
+
+const priceOrderList = [
+	{
+		name: 'Menor para maior',
+		value: 'minToMax'
+	},
+	{
+		name: 'Maior para menor',
+		value: 'maxToMin'
+	},
+]
 
 export default function Home() {
 	const router = useRouter();
 
 	const [showFilterModal, setShowFilterModal] = useState<boolean>(false);
 	const [products, setProducts] = useState<Array<Product>>([]);
+	const [pagesTotal, setPagesTotal] = useState<number>();
+	const [currentPage, setCurrentPage] = useState<number>(1);
 
 	const searchForm = useForm<SearchForm>({
 		search: {
@@ -41,20 +58,31 @@ export default function Home() {
 		},
 		maxPrice: {
 			type: 'decimal'
+		},
+		priceOrder: {
+			type: 'select'
 		}
 	});
 
 	const getProducts = useCallback((searchFilter?:Partial<SearchForm> & Partial<FilterForm>) => {
-		api.get<ProductsGetProductsResponse>("/products", {
+		api.get<JsonServerPaginateReturn<ProductsGetProductsResponse>>("/products", {
 			params: {
 				'price_gte': searchFilter?.minPrice,
 				'price_lte': searchFilter?.maxPrice,
-				'name': searchFilter?.search
+				'name': searchFilter?.search,
+				'_sort': `${searchFilter?.priceOrder === 'maxToMin' ? '-' : ''}price`,
+				'_page': currentPage,
+				'_per_page': 12
 			}
 		}).then(res => {
-			setProducts((res.data));
+			setProducts(res.data.data);
+			setPagesTotal(res.data.pages);
+
+			if (typeof window !== 'undefined') {
+				window.scrollTo({ top: 0 });
+			};
 		});
-	}, []);
+	}, [currentPage]);
 
 	useEffect(() => {
 		getProducts();
@@ -62,11 +90,13 @@ export default function Home() {
 
 	function submitSearch({ search }:SearchForm) {
 		getProducts({ search });
+		setCurrentPage(1);
 	};
 
-	function submitFilter({ minPrice, maxPrice }:FilterForm) {
-		getProducts({ minPrice, maxPrice });
+	function submitFilter({ minPrice, maxPrice, priceOrder }:FilterForm) {
+		getProducts({ minPrice, maxPrice, priceOrder });
 		setShowFilterModal(false)
+		setCurrentPage(1);
 	};
 
 	const renderProducts = products?.map((product, index) => {
@@ -88,7 +118,7 @@ export default function Home() {
 							<Plus />
 						</IconButton>
 					</div>
-					<div className="flex gap-2">
+					<div className="flex sm:flex-col gap-2">
 						<form
 							onSubmit={searchForm.handleOnSubmit(submitSearch)}
 							className="flex min-w-0 bg-white rounded-lg outline outline-gray-300 hover:outline-black has-focus:outline-blue-700 duration-300 flex-1"
@@ -134,6 +164,12 @@ export default function Home() {
 											register={filterForm.register.inputDecimal('maxPrice')}
 											placeholder="100,00"
 										/>
+										<InputSelect
+											label="Ordenar preço"
+											placeholder="Ordenar de"
+											options={priceOrderList}
+											register={filterForm.register.inputSelect('priceOrder')}
+										/>
 										<Button
 											type="submit"
 											className="justify-center"
@@ -148,7 +184,7 @@ export default function Home() {
 							onSubmit={filterForm.handleOnSubmit(submitFilter)}
 							className="flex-1 gap-2 hidden sm:flex"
 						>
-							<div className="flex gap-2">
+							<div className="flex gap-2 flex-1">
 								<InputDecimal
 									placeholder="Valor Mínimo"
 									register={filterForm.register.inputDecimal('minPrice')}
@@ -156,6 +192,11 @@ export default function Home() {
 								<InputDecimal
 									placeholder="Valor Máximo"
 									register={filterForm.register.inputDecimal('maxPrice')}
+								/>
+								<InputSelect
+									placeholder="Ordenar de"
+									options={priceOrderList}
+									register={filterForm.register.inputSelect('priceOrder')}
 								/>
 							</div>
 							<Button type="submit">Filtrar</Button>
@@ -174,6 +215,11 @@ export default function Home() {
 							<p className="text-center max-w-80 mx-auto">Ops! Você ainda não tem nenhum produto cadastrado</p>
 						</div>
 				}
+				<Pagination
+					pagesTotal={pagesTotal}
+					currentPage={currentPage}
+					onChangePage={pageNumber => setCurrentPage(pageNumber)}
+				/>
 			</main>
 		</div>
 	);

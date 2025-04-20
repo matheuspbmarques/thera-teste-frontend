@@ -17,7 +17,7 @@ export default function ProductCard({
     category
 }:ProductCardProps) {
     return (
-        <div className="flex flex-col items-center bg-white rounded-lg overflow-auto drop-shadow-lg">
+        <div className="flex flex-col items-center bg-white rounded-lg overflow-auto drop-shadow-2xl hover:drop-shadow-blue-700/50 hover:z-[1] duration-300 cursor-pointer">
             <div className="w-full aspect-square bg-white overflow-hidden relative">
                 <Image
                     alt="Imagem do produto"

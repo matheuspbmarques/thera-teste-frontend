@@ -16,9 +16,13 @@ type CheckUrl = {
     invalidMessage: string,
     requiredMessage?: string
 };
+type CheckSelect = {
+    type: 'select',
+    requiredMessage?: string
+};
 
 export type UseFormCheck<Form> = {
-    [K in keyof Form]: CheckText | CheckDecimal | CheckUrl
+    [K in keyof Form]: CheckText | CheckDecimal | CheckUrl | CheckSelect
 };
 
 type Error<Form> = {
@@ -77,6 +81,15 @@ function checkUrl (value: FormDataEntryValue, check: CheckUrl): Array<string> | 
 
     return errorMessages.length === 0 ? undefined : errorMessages;
 }
+function checkSelect (value: FormDataEntryValue, check: CheckSelect): Array<string> | undefined {
+    const errorMessages: Array<string> = [];
+
+    if (check.requiredMessage && value.toString() == "") {
+        errorMessages.push(check.requiredMessage);
+    };
+
+    return errorMessages.length === 0 ? undefined : errorMessages;
+}
 
 export type UseFormRegisterInputReturn = {
     name: string,
@@ -87,6 +100,12 @@ export type UseFormRegisterTextareaReturn = {
     name: string,
     onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void,
     value: string
+};
+export type UseFormRegisterInputSelectReturn = {
+    name: string,
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void,
+    value: string,
+    onSelect: (value: string) => void
 };
 
 type UseFormReturn<Form> = {
@@ -100,6 +119,7 @@ type Register<Form> = {
     inputText: (inputName: keyof Form) => UseFormRegisterInputReturn,
     inputDecimal: (inputName: keyof Form) => UseFormRegisterInputReturn,
     inputTextArea: (inputName: keyof Form) => UseFormRegisterTextareaReturn,
+    inputSelect: (inputName: keyof Form) => UseFormRegisterInputSelectReturn,
 };
 
 export default function useForm <Form extends object> (check:UseFormCheck<Form>): UseFormReturn<Form> {
@@ -128,7 +148,7 @@ export default function useForm <Form extends object> (check:UseFormCheck<Form>)
     
             const formDataDefault = new FormData(event.currentTarget);
 
-            function addOnFormData (inputName: string, value: FormDataEntryValue, valueType: 'text' | 'decimal' | 'url') {
+            function addOnFormData (inputName: string, value: FormDataEntryValue, valueType: 'text' | 'decimal' | 'url' | 'select') {
                 switch (valueType) {
                     case 'text': {
                         formData[inputName] = value.toString() === '' ? undefined : value.toString();
@@ -147,6 +167,12 @@ export default function useForm <Form extends object> (check:UseFormCheck<Form>)
                     };
 
                     case 'url': {
+                        formData[inputName] = value.toString() === '' ? undefined : value.toString();
+
+                        break;
+                    };
+
+                    case 'select': {
                         formData[inputName] = value.toString() === '' ? undefined : value.toString();
 
                         break;
@@ -187,6 +213,16 @@ export default function useForm <Form extends object> (check:UseFormCheck<Form>)
     
                         break;
                     };
+
+                    case 'select': {
+                        const errorMessages = checkSelect(inputValue, inputCheck);
+    
+                        if (errorMessages) addInputError(inputName, errorMessages);
+
+                        addOnFormData(inputName, inputValue, inputCheck.type);
+    
+                        break;
+                    }
                 };
             })
 
@@ -262,13 +298,43 @@ export default function useForm <Form extends object> (check:UseFormCheck<Form>)
         };
     };
 
+    function registerInputSelect (inputName: keyof Form): UseFormRegisterInputSelectReturn {
+        function onChange (e: ChangeEvent<HTMLInputElement>) {
+            if (typeof inputError[inputName] !== 'undefined') {
+                delete inputError[inputName];
+
+                setInputError({...inputError});
+            };
+
+            setNewValueToFormData(inputName, e.target.value);
+        };
+
+        function onSelect (value: string): void {
+            if (typeof inputError[inputName] !== 'undefined') {
+                delete inputError[inputName];
+
+                setInputError({...inputError});
+            };
+
+            setNewValueToFormData(inputName, value);
+        };
+
+        return {
+            name: inputName as string,
+            onChange,
+            value: Object.create(formData)[inputName] ?? '',
+            onSelect
+        };
+    };
+
     return {
         handleOnSubmit,
         inputError,
         register: {
             inputText: registerInputText,
             inputDecimal: registerInputDecimal,
-            inputTextArea: registerInputTextArea
+            inputTextArea: registerInputTextArea,
+            inputSelect: registerInputSelect
         },
         resetFormData,
         formData
