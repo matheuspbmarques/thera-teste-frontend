@@ -22,7 +22,7 @@ export default function ProductCard({
                     src={image}
                     width={512}
                     height={512}
-                    className="absolute h-full min-w-max top-1/2 left-1/2 -translate-1/2"
+                    className="absolute top-1/2 left-1/2 -translate-1/2"
                 />
             </div>
             <div className="flex flex-col items-start p-2 w-full flex-1">
