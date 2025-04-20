@@ -12,6 +12,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Plus, Search, Filter, X } from 'react-feather';
 import ProductCard from "./(components)/ProductCard";
+import noProductIllustrationSvg from '@/assets/illustrations/no-product.svg';
+import Image from "next/image";
 
 type SearchForm = {
 	search?: string
@@ -147,9 +149,18 @@ export default function Home() {
 						</form>
 					</div>
 				</header>
-				<section className="flex flex-col gap-2 mt-6 sm:grid sm:grid-cols-3 lg:grid-cols-4">
-					{renderProducts}
-				</section>
+				{
+					(products.data && products.data?.length > 0)
+						?
+						<section className="flex flex-col gap-2 mt-6 sm:grid sm:grid-cols-3 lg:grid-cols-4">
+							{ renderProducts }
+						</section>
+						:
+						<div>
+							<Image alt="Sem Produtos" src={noProductIllustrationSvg} width={256} height={256} className="mx-auto mt-6" />
+							<p className="text-center max-w-80 mx-auto">Ops! Você ainda não tem nenhum produto cadastrado</p>
+						</div>
+				}
 			</main>
 		</div>
 	);
