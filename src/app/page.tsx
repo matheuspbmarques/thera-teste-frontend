@@ -1,19 +1,20 @@
 'use client'
 
-import { getProducts } from "@/apis/api";
 import InputDecimal from "@/components/form/InputDecimal";
 import Button from "@/components/ui/Button";
 import H1 from "@/components/ui/H1";
 import IconButton from "@/components/ui/IconButton";
 import routes from "@/configs/routes";
 import useForm from "@/hooks/useForm";
-import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Plus, Search, Filter, X } from 'react-feather';
 import ProductCard from "./(components)/ProductCard";
 import noProductIllustrationSvg from '@/assets/illustrations/no-product.svg';
 import Image from "next/image";
+import { ProductsGetProductsResponse } from "@/@types/apis/api/Product.type";
+import api from "@/apis/api";
+import { Product } from "@/@types/database/Product.type";
 
 type SearchForm = {
 	search?: string
@@ -27,6 +28,7 @@ export default function Home() {
 	const router = useRouter();
 
 	const [showFilterModal, setShowFilterModal] = useState<boolean>(false);
+	const [products, setProducts] = useState<Array<Product>>([]);
 
 	const searchForm = useForm<SearchForm>({
 		search: {
@@ -42,21 +44,32 @@ export default function Home() {
 		}
 	});
 
-	const products = useQuery({
-		queryKey: ['products'],
-		queryFn: getProducts
-	});
+	const getProducts = useCallback((searchFilter?:Partial<SearchForm> & Partial<FilterForm>) => {
+		api.get<ProductsGetProductsResponse>("/products", {
+			params: {
+				'price_gte': searchFilter?.minPrice,
+				'price_lte': searchFilter?.maxPrice,
+				'name': searchFilter?.search
+			}
+		}).then(res => {
+			setProducts((res.data));
+		});
+	}, []);
 
-	function submitSearch({ search }: SearchForm) {
-		console.log(search);
+	useEffect(() => {
+		getProducts();
+	}, [getProducts]);
+
+	function submitSearch({ search }:SearchForm) {
+		getProducts({ search });
 	};
 
-	function submitFilter({ minPrice, maxPrice }: FilterForm) {
-		console.log(minPrice, maxPrice);
+	function submitFilter({ minPrice, maxPrice }:FilterForm) {
+		getProducts({ minPrice, maxPrice });
 		setShowFilterModal(false)
 	};
 
-	const renderProducts = products.data?.map((product, index) => {
+	const renderProducts = products?.map((product, index) => {
 		return <ProductCard
 			key={index}
 			{...product}
@@ -150,10 +163,10 @@ export default function Home() {
 					</div>
 				</header>
 				{
-					(products.data && products.data?.length > 0)
+					products?.length > 0
 						?
 						<section className="flex flex-col gap-2 mt-6 sm:grid sm:grid-cols-3 lg:grid-cols-4">
-							{ renderProducts }
+							{renderProducts}
 						</section>
 						:
 						<div>

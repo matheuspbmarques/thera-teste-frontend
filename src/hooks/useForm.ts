@@ -93,7 +93,8 @@ type UseFormReturn<Form> = {
     handleOnSubmit: (submit:SubmitFunction<Form>) => FormEventHandler<HTMLFormElement>,
     inputError: Error<Form>,
     register: Register<Form>,
-    resetFormData: () => void
+    resetFormData: () => void,
+    formData: Form
 };
 type Register<Form> = {
     inputText: (inputName: keyof Form) => UseFormRegisterInputReturn,
@@ -269,6 +270,7 @@ export default function useForm <Form extends object> (check:UseFormCheck<Form>)
             inputDecimal: registerInputDecimal,
             inputTextArea: registerInputTextArea
         },
-        resetFormData
+        resetFormData,
+        formData
     };
 };
