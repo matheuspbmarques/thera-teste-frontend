@@ -7,7 +7,8 @@ type ButtonProps = {
     className?: string,
     type?: ButtonHTMLAttributes<HTMLButtonElement>["type"],
     loadingText?: string,
-    isLoading?: boolean
+    isLoading?: boolean,
+    onClick?: () => void
 };
 
 export default function Button({
@@ -17,12 +18,14 @@ export default function Button({
     className,
     type = "button",
     loadingText,
-    isLoading
+    isLoading,
+    onClick
 }:ButtonProps) {
     return (
         <button
             className={`flex gap-2 p-2 bg-blue-700 text-slate-100 rounded-lg items-center ${className} hover:bg-blue-500 duration-300 outline-none`}
             type={type}
+            onClick={onClick}
         >
             {
                 isLoading
