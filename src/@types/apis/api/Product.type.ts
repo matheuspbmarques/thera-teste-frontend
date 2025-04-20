@@ -9,5 +9,6 @@ export type ProductsPostProductsBody = {
     name: string,
     price: number,
     description: string,
-    image: string
+    image: string,
+    category: string
 };

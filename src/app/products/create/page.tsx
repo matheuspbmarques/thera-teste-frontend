@@ -19,7 +19,8 @@ type Form = {
     name: string,
     price: number,
     description: string,
-    image: string
+    image: string,
+    category: string
 };
 
 const formCheck: UseFormCheck<Form> = {
@@ -39,8 +40,12 @@ const formCheck: UseFormCheck<Form> = {
         type: 'url',
         invalidMessage: 'A URL da image do produto é invalida',
         requiredMessage: 'Informe a URL da imagem do produto'
+    },
+    category: {
+        type: 'text',
+        min: [1, 'Informe a categoria do produto']
     }
-}
+};
 
 export default function ProductsCreate () {
     const [successMessage, setSuccessMessage] = useMessage(5000);
@@ -74,19 +79,26 @@ export default function ProductsCreate () {
                                 register={register.inputText("name")}
                                 errorMessages={inputError.name}
                             />
-                            <InputDecimal
-                                id="price"
-                                label="Preço"
-                                placeholder="Preço do produto"
-                                errorMessages={inputError.price}
-                                register={register.inputDecimal('price')}
-                            />
                             <TextArea
                                 id="description"
                                 label="Descrição"
                                 placeholder="Descrição do produto"
                                 register={register.inputTextArea("description")}
                                 errorMessages={inputError.description}
+                            />
+                            <InputText
+                                id="category"
+                                label="Categoria"
+                                placeholder="Categoria do produto"
+                                register={register.inputText("category")}
+                                errorMessages={inputError.name}
+                            />
+                            <InputDecimal
+                                id="price"
+                                label="Preço"
+                                placeholder="Preço do produto"
+                                errorMessages={inputError.price}
+                                register={register.inputDecimal('price')}
                             />
                             <InputText
                                 id="image"
