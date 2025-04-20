@@ -61,7 +61,7 @@ export default function ProductsCreate () {
                 <header className="flex justify-between mb-4">
                     <H1>Cadastrar Produto</H1>
                 </header>
-                <div className="flex items-center">
+                <div className="flex items-center gap-4">
                     <div className="hidden sm:flex sm:flex-1 sm:h-80 sm:items-center sm:justify-center">
                         <Image alt="Ilustração de formulário de adição de produtos" src={addProductIllustration} priority />
                     </div>
