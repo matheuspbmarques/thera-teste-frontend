@@ -25,7 +25,7 @@ export default function TextArea ({
             {label && <label htmlFor={ id }>{ label }</label>}
             <textarea
                 {...register}
-                className={`border border-slate-800 rounded-lg p-2 outline-blue-700 resize-none`}
+                className={`bg-white p-2 rounded-lg resize-none outline outline-gray-300 hover:outline-black focus:outline-blue-700 duration-300`}
                 style={errorMessages ? inputError : undefined}
                 placeholder={placeholder}
             ></textarea>
