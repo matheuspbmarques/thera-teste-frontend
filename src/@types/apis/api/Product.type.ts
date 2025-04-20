@@ -3,7 +3,8 @@ export type ProductsGetProductsResponse = Array<{
     name: string,
     price: number,
     description: string,
-    image: string
+    image: string,
+    category: string
 }>;
 export type ProductsPostProductsBody = {
     name: string,

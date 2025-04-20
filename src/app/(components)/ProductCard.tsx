@@ -5,14 +5,16 @@ type ProductCardProps = {
     image: string,
     name: string,
     description: string,
-    price: number
+    price: number,
+    category: string
 }
 
 export default function ProductCard({
     image,
     name,
     description,
-    price
+    price,
+    category
 }:ProductCardProps) {
     return (
         <div className="flex flex-col items-center bg-white rounded-lg overflow-auto drop-shadow-lg">
@@ -29,6 +31,7 @@ export default function ProductCard({
                 <p className="font-bold">{name}</p>
                 <p className="text-left text-sm flex-1">{description}</p>
                 <p className="text-left mt-2">{parseToRealString(price)}</p>
+                <p className="text-left font-bold text-xs">{category}</p>
             </div>
         </div>
     )
