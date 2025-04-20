@@ -6,7 +6,7 @@ type InputDecimalProps = {
     errorMessages?: Array<string>,
     id?: string,
     placeholder?: string,
-    register?: UseFormRegisterInputReturn
+    register?: UseFormRegisterInputReturn,
 };
 
 export default function InputDecimal ({
@@ -21,16 +21,16 @@ export default function InputDecimal ({
     });
 
     return (
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 flex-1">
             {label && <label htmlFor={id}>{ label }</label>}
             <input
                 type="text"
                 placeholder={placeholder}
-                className="border border-slate-800 p-2 rounded-lg outline-blue-700"
+                className="bg-white p-2 outline outline-gray-300 rounded-lg hover:outline-black focus:outline-blue-700 duration-300 w-full"
                 style={errorMessages ? inputError : undefined}
                 {...register}
             />
             {renderErrorMessages}
         </div>
-    )
-}
+    );
+};

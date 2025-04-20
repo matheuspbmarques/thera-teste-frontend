@@ -21,7 +21,7 @@ export default function Button({
 }:ButtonProps) {
     return (
         <button
-            className={`flex gap-2 p-2 bg-blue-700 text-slate-100 rounded-lg items-center ${className}`}
+            className={`flex gap-2 p-2 bg-blue-700 text-slate-100 rounded-lg items-center ${className} hover:bg-blue-500 duration-300 outline-none`}
             type={type}
         >
             {
