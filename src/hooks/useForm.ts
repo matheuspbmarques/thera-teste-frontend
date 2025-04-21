@@ -105,7 +105,7 @@ export type UseFormRegisterInputSelectReturn = {
     name: string,
     onChange: (e: ChangeEvent<HTMLInputElement>) => void,
     value: string,
-    onSelect: (value: string) => void
+    onSelect: (value?: string) => void
 };
 
 type UseFormReturn<Form> = {
@@ -236,8 +236,12 @@ export default function useForm <Form extends object> (check:UseFormCheck<Form>)
         setFormData({} as Form);
     };
 
-    function setNewValueToFormData (inputName: keyof Form, value: string) {
-        formData[inputName] = value as Form[keyof Form];
+    function setNewValueToFormData (inputName: keyof Form, value?: string) {
+        if (value) {
+            formData[inputName] = value as Form[keyof Form];
+        } else {
+            delete formData[inputName];
+        };
 
         setFormData({ ...formData });
     };
@@ -309,7 +313,7 @@ export default function useForm <Form extends object> (check:UseFormCheck<Form>)
             setNewValueToFormData(inputName, e.target.value);
         };
 
-        function onSelect (value: string): void {
+        function onSelect (value?: string): void {
             if (typeof inputError[inputName] !== 'undefined') {
                 delete inputError[inputName];
 

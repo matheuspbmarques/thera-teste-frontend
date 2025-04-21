@@ -1,6 +1,6 @@
 import { UseFormRegisterInputSelectReturn } from "@/hooks/useForm"
 import { useState } from "react";
-import { ChevronDown } from "react-feather"
+import { ChevronDown, ChevronUp, X } from "react-feather"
 import colors from 'tailwindcss/colors'
 
 type InputSelectProps = {
@@ -27,7 +27,10 @@ export default function InputSelect({
         return (
             <li
                 key={index}
-                className="p-2 border-b border-gray-200 hover:bg-blue-100 duration-300"
+                className="p-2 border-gray-200 hover:bg-blue-100 duration-300"
+                style={{
+                    borderTop: index > 0 ? 1 : undefined
+                }}
                 onClick={() => {
                     register?.onSelect(value);
                     setValueSelect(name);
@@ -41,13 +44,34 @@ export default function InputSelect({
         <div className="flex flex-col gap-1 flex-1">
             {label && <label>{label}</label>}
             <div
-                className="bg-white p-2 outline outline-gray-300 rounded-lg flex gap-1 cursor-default relative hover:outline-black duration-300"
-                onClick={() => setShowOptions(!showOptions)}
+                className="bg-white outline outline-gray-300 rounded-lg flex gap-1 cursor-default relative hover:outline-black duration-300"
+                onClick={() => {
+                    if(typeof valueSelect == 'undefined') setShowOptions(!showOptions);
+                }}
             >
-                <span className="flex-1" style={{
-                    color: valueSelect ? colors.slate[800] : colors.gray[300]
+                <span className="flex-1 py-2 pl-2" style={{
+                    color: valueSelect ? colors.slate[800] : colors.gray[400]
                 }}>{valueSelect ? valueSelect : placeholder}</span>
-                <ChevronDown className="text-gray-400 mt-[1px]" />
+                {
+                    valueSelect
+                        ?
+                        <div className="p-2" onClick={() => {
+                            register?.onSelect(undefined)
+                            setValueSelect(undefined);
+                        }}>
+                            <X />
+                        </div>
+                        :
+                        <div className="p-2">
+                            {
+                                showOptions
+                                ?
+                                <ChevronUp className="text-gray-400" />
+                                :
+                                <ChevronDown className="text-gray-400" />
+                            }
+                        </div>
+                }
                 {showOptions && <ul className="absolute top-11 w-full bg-white left-0 z-10 rounded-lg overflow-hidden">
                     {renderOptions}
                 </ul>}
