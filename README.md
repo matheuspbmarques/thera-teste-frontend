@@ -34,7 +34,17 @@ npm run build
 yarn build
 ```
 
-E inicie o mesmo:
+Antes de iniciar o projeto, inicie a API fictícia:
+
+```
+# npm
+npm run db
+
+# npm
+yarn db
+```
+
+E agora inicie o projeto:
 
 ```
 # npm
