@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# thera-teste-frontend
 
-## Getting Started
+## Configuração do Projeto
 
-First, run the development server:
+Clone o repositório do projeto no seu computador:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+git clone https://github.com/matheuspbmarques/thera-teste-frontend.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Instale as dependências:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+# npm
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# yarn
+yarn install
+```
 
-## Learn More
+No projeto tem 2 arquivos JSON de exemplo para utilizar com o [json-server](#dependências), sendo eles:
+- **db.empty.example.json**: para iniciar o projeto com uma API sem nenhum produto;
+- **db.full.example.json**: para iniciar o projeto com uma API com produtos.
 
-To learn more about Next.js, take a look at the following resources:
+Aonde você deve apenas renomear um dos dois para db.json e assim ter o projeto como deseja.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Faça a construção do projeto:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+# npm
+npm run build
 
-## Deploy on Vercel
+# npm
+yarn build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+E inicie o mesmo:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+# npm
+npm start
+
+# npm
+yarn start
+```
+
+E acesse http://localhost:3000 ou http://127.0.0.1:3000.
+
+_Lembre-se de ter certeza que a porta **3000** do seru computador, deve estar disponível para que o projeto esteja o radando na mesma._
+
+## Explicação das Escolhas
+
+### [React](https://react.dev/)
+
+ - **Context** ([createContext](https://react.dev/reference/react/createContext) e [useContext](https://react.dev/reference/react/useContext)): para reduzir a quantidade de dependências e utilizar tecnologias do próprio [React](https://react.dev/).
+
+### [NextJS](https://nextjs.org/)
+
+- [**App Router**](https://nextjs.org/docs#app-router-vs-pages-router): no NextJS permiti usar as últimas ferramentas do ReactJS, como Server Components e Streaming (ainda que ambas as tecnologias não foram usadas no projeto).
+
+- **Estrutura de Pastas com SRC**: Para separar o projeto em si dos arquivos de configurações, dependências, builds, entre outros.
+
+### Dependências:
+
+- [**Jest**](https://jestjs.io/pt-BR/): está na [documentação do NextJS](https://nextjs.org/docs/app/building-your-application/testing/jest)  e é o único citando conter Snapshot Testing.
+
+ - [**Axios**](https://axios-http.com/ptbr/docs/intro): é amplamente usado por desenvolvedores front-end (Web ou Mobile com React Native), possibilitando criar variais instâncias de API's pré-configuradas.
+
+ - [**ESlint**](https://eslint.org/): para exibir erros em tempo de desenvolvimento, assim evitar erros na hora de fazer a construção (build) da aplicação.
+
+ - [**React Feather**](https://github.com/feathericons/react-feather): para a utilização dos ícones [Feather](https://feathericons.com/) e assim ajudar na UI/UX.
+
+ - [**JSON Server**](https://github.com/typicode/json-server): para simular o consumo de API.
+
+ - [**TanStackQuery**](https://tanstack.com/query/latest): para fazer o controle das requisições. Assim evitando requisições desnecessárias para a API's e reduzindo um gasto de processamento nos servidores aonde as API's supostamente estariam.
