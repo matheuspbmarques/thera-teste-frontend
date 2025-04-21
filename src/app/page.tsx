@@ -18,6 +18,7 @@ import { Product } from "@/@types/database/Product.type";
 import InputSelect from "@/components/form/InputSelect";
 import { JsonServerPaginateReturn } from "@/@types/libs/jsonServer.type";
 import Pagination from "./(components)/Pagination";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 type SearchForm = {
 	search?: string
@@ -112,17 +113,20 @@ export default function Home() {
 				<header className="flex flex-col gap-4">
 					<div className="flex justify-between">
 						<H1>Meus Produtos</H1>
-						<IconButton
-							onClick={() => router.push(routes.products.create.route)}
-							className="sm:hidden"
-						>
-							<Plus />
-						</IconButton>
-						<Button
-							startIcon={<Plus />}
-							onClick={() => router.push(routes.products.create.route)}
-							className="hidden sm:flex"
-						>Produto</Button>
+						<div className="flex gap-4">
+							<ThemeToggle />
+							<IconButton
+								onClick={() => router.push(routes.products.create.route)}
+								className="sm:hidden"
+							>
+								<Plus />
+							</IconButton>
+							<Button
+								startIcon={<Plus />}
+								onClick={() => router.push(routes.products.create.route)}
+								className="hidden sm:flex"
+							>Produto</Button>
+						</div>
 					</div>
 					<div className="flex sm:flex-col gap-2">
 						<form

@@ -16,6 +16,8 @@ import Image from "next/image";
 import newProductIllustration from '@/assets/illustrations/new-product.svg'
 import { useRouter } from "next/navigation";
 import routes from "@/configs/routes";
+import IconButton from "@/components/ui/IconButton";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 type Form = {
     name: string,
@@ -69,12 +71,22 @@ export default function ProductsCreate() {
             <main className="max-w-3xl mx-auto">
                 <header className="flex justify-between mb-4">
                     <H1>Cadastrar Produto</H1>
-                    <Button
-                        onClick={() => router.push(routes.index.route)}
-                        startIcon={<Home />}
-                    >
-                        Início
-                    </Button>
+                    <div className="flex gap-4">
+                        <ThemeToggle />
+                        <IconButton
+                            className="sm:hidden"
+                            onClick={() => router.push(routes.index.route)}
+                        >
+                            <Home />
+                        </IconButton>
+                        <Button
+                            onClick={() => router.push(routes.index.route)}
+                            startIcon={<Home />}
+                            className="hidden sm:flex"
+                        >
+                            Início
+                        </Button>
+                    </div>
                 </header>
                 <div className="flex items-center gap-4">
                     <div className="hidden sm:flex sm:flex-1 sm:h-80 sm:items-center sm:justify-center">
