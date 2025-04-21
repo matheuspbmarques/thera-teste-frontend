@@ -1,0 +1,484 @@
+{
+    "products": [
+      {
+        "id": "a70a",
+        "name": "Bateria Eletrônica V-DRUMS Roland VAD507",
+        "description": "V-Drums Acoustic Design: A Melhor Experiência em Bateria",
+        "category": "Instrumentos Musicais",
+        "price": 51745.75,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "b82f",
+        "name": "Smartphone Galaxy S23 Ultra 5G",
+        "description": "Tela Dynamic AMOLED 2X de 6.8'', 200MP e S Pen integrada",
+        "category": "Celulares e Smartphones",
+        "price": 7599.99,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "c94e",
+        "name": "Fogão 5 Bocas Consul Acendimento Automático",
+        "description": "Fogão com forno elétrico e acendimento automático a gás",
+        "category": "Eletrodomésticos",
+        "price": 2199.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "d36a",
+        "name": "Câmera Canon EOS R5 Mirrorless",
+        "description": "Câmera profissional com sensor Full Frame e 8K RAW",
+        "category": "Fotografia",
+        "price": 32999.90,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "e57b",
+        "name": "Notebook Dell XPS 15 OLED",
+        "description": "Notebook premium com tela OLED 3.5K e processador i9",
+        "category": "Informática",
+        "price": 18999.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "f68c",
+        "name": "Mesa de Escritório Executive",
+        "description": "Mesa em MDF com estrutura em aço e acabamento premium",
+        "category": "Móveis",
+        "price": 899.90,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "g79d",
+        "name": "Fone de Ouvido Sony WH-1000XM5",
+        "description": "Fone com cancelamento de ruído líder do mercado",
+        "category": "Áudio",
+        "price": 2499.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "h80e",
+        "name": "Smart TV LG OLED 65'' 4K",
+        "description": "TV com tecnologia OLED e processador α9 Gen5",
+        "category": "TV e Vídeo",
+        "price": 6999.99,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "i91f",
+        "name": "Aspirador de Pó Robô Xiaomi Mi Robot Vacuum",
+        "description": "Aspirador robô com navegação laser e app control",
+        "category": "Casa Inteligente",
+        "price": 2199.90,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "j02g",
+        "name": "Bicicleta Aro 29 Caloi Elite",
+        "description": "Bicicleta mountain bike com 21 velocidades e suspensão",
+        "category": "Esportes",
+        "price": 3299.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "k13h",
+        "name": "Teclado Musical Yamaha P-125",
+        "description": "Teclado digital com 88 teclas pesadas e som premium",
+        "category": "Instrumentos Musicais",
+        "price": 5899.90,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "l24i",
+        "name": "Microfone Shure SM58",
+        "description": "Microfone dinâmico profissional para vocais",
+        "category": "Áudio",
+        "price": 899.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "m35j",
+        "name": "Mixer Digital Behringer X32",
+        "description": "Console digital profissional 32 canais",
+        "category": "Áudio",
+        "price": 12999.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "n46k",
+        "name": "Violão Acústico Giannini GD-10",
+        "description": "Violão folk com tampo de spruce e mogno",
+        "category": "Instrumentos Musicais",
+        "price": 799.50,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "o57l",
+        "name": "Baixo Elétrico Ibanez SR300",
+        "description": "Baixo de 4 cordas com captadores ativos",
+        "category": "Instrumentos Musicais",
+        "price": 3299.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "p68m",
+        "name": "Amplificador para Guitarra Marshall DSL40CR",
+        "description": "Amplificador valvulado 40W com efeitos integrados",
+        "category": "Áudio",
+        "price": 6999.90,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "q79n",
+        "name": "Saxofone Alto Yamaha YAS-280",
+        "description": "Saxofone profissional para estudantes e músicos",
+        "category": "Instrumentos Musicais",
+        "price": 8999.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "r80o",
+        "name": "Bateria Acústica Pearl Export",
+        "description": "Kit completo de bateria acústica 5 peças",
+        "category": "Instrumentos Musicais",
+        "price": 6899.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "s91p",
+        "name": "Pedal de Efeito Boss DS-1",
+        "description": "Distorcionário clássico para guitarra",
+        "category": "Áudio",
+        "price": 499.90,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "t02q",
+        "name": "Ukulele Concert Kala KA-15S",
+        "description": "Ukulele tamanho concert em mogno",
+        "category": "Instrumentos Musicais",
+        "price": 599.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "u13r",
+        "name": "Violino Strunal 4/4",
+        "description": "Violino profissional tamanho completo com arco e case",
+        "category": "Instrumentos Musicais",
+        "price": 1899.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "v24s",
+        "name": "Flauta Doce Yamaha YRS-23",
+        "description": "Flauta doce soprano em resina para iniciantes",
+        "category": "Instrumentos Musicais",
+        "price": 129.90,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "w35t",
+        "name": "Metrônomo Digital Korg MA-2",
+        "description": "Metrônomo com ajuste preciso de tempo e batidas",
+        "category": "Acessórios Musicais",
+        "price": 199.50,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "x46u",
+        "name": "Piano Digital Casio PX-870",
+        "description": "Piano digital com teclado gradado e 256 vozes",
+        "category": "Instrumentos Musicais",
+        "price": 8999.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "y57v",
+        "name": "Cajón Peruano Profissional",
+        "description": "Caixa de percussão em madeira maciça",
+        "category": "Percussão",
+        "price": 499.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "z68w",
+        "name": "Pedal de Loop Boss RC-1",
+        "description": "Pedal loop station para criação de camadas musicais",
+        "category": "Áudio",
+        "price": 799.90,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "a79x",
+        "name": "Microfone Condensador Rode NT1-A",
+        "description": "Kit completo para gravação vocal profissional",
+        "category": "Estúdio",
+        "price": 1499.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "b80y",
+        "name": "Gaita Diatônica Hohner Special 20",
+        "description": "Gaita em C (dó) com placas de latão",
+        "category": "Instrumentos Musicais",
+        "price": 349.90,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "c91z",
+        "name": "Suporte para Guitarra Hercules GS414B",
+        "description": "Suporte robusto com trava de segurança",
+        "category": "Acessórios",
+        "price": 159.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "d02a",
+        "name": "Interface de Áudio Focusrite Scarlett 2i2",
+        "description": "Interface USB 2 entradas para home studio",
+        "category": "Estúdio",
+        "price": 1199.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "e13b",
+        "name": "Controlador MIDI AKAI MPK Mini MK3",
+        "description": "Teclado controlador MIDI compacto com pads sensíveis",
+        "category": "Estúdio",
+        "price": 899.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "f24c",
+        "name": "Monitor de Áudio Yamaha HS5",
+        "description": "Monitor de estúdio 5 polegadas com resposta plana",
+        "category": "Estúdio",
+        "price": 2199.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "g35d",
+        "name": "Cabos de Áudio Monster XLR 3m",
+        "description": "Cabos balanceados para microfones e interfaces",
+        "category": "Acessórios",
+        "price": 149.90,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "h46e",
+        "name": "Trompete Yamaha YTR-2330",
+        "description": "Trompete em Sib para estudantes",
+        "category": "Instrumentos Musicais",
+        "price": 4299.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "i57f",
+        "name": "Palhetas Dunlop Tortex 0.73mm",
+        "description": "Pack com 12 palhetas para guitarra/baixo",
+        "category": "Acessórios",
+        "price": 39.90,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "j68g",
+        "name": "Banco de Piano Ajustável",
+        "description": "Banco regulável em altura para pianistas",
+        "category": "Acessórios",
+        "price": 299.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "k79h",
+        "name": "Pedal de Wah-Wah Dunlop Cry Baby",
+        "description": "Efeito wah clássico para guitarra",
+        "category": "Áudio",
+        "price": 699.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "l80i",
+        "name": "Violoncelo Strunal 4/4",
+        "description": "Violoncelo profissional tamanho completo",
+        "category": "Instrumentos Musicais",
+        "price": 7899.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "m91j",
+        "name": "Suporte para Microfone Hercules",
+        "description": "Suporte robusto com base pesada",
+        "category": "Acessórios",
+        "price": 189.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "n02k",
+        "name": "Guitarra Elétrica Gibson Les Paul",
+        "description": "Modelo Standard com captadores Humbucker",
+        "category": "Instrumentos Musicais",
+        "price": 15999.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "o13l",
+        "name": "Sintetizador Korg Minilogue XD",
+        "description": "Sintetizador analógico digital híbrido 37 teclas",
+        "category": "Instrumentos Musicais",
+        "price": 5299.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "p24m",
+        "name": "Fone de Estúdio Audio-Technica ATH-M50x",
+        "description": "Fone profissional para monitoramento de áudio",
+        "category": "Áudio",
+        "price": 899.90,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "q35n",
+        "name": "Microfone Sem Fio Shure BLX288/PG58",
+        "description": "Sistema sem fio com dois microfones para apresentações",
+        "category": "Áudio",
+        "price": 3299.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "r46o",
+        "name": "Bateria Eletrônica Alesis Nitro Mesh Kit",
+        "description": "Kit com pads de mesh e módulo de som profissional",
+        "category": "Instrumentos Musicais",
+        "price": 4299.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "s57p",
+        "name": "Guitarra Acústica Taylor 214ce",
+        "description": "Guitarra acústica-elétrica com sistema de captação ES2",
+        "category": "Instrumentos Musicais",
+        "price": 11999.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "t68q",
+        "name": "Pedal de Chorus Boss CH-1",
+        "description": "Pedal de efeito chorus para guitarra",
+        "category": "Áudio",
+        "price": 599.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "u79r",
+        "name": "Teclado Arranjador Yamaha PSR-E373",
+        "description": "Teclado com 61 teclas e 622 vozes",
+        "category": "Instrumentos Musicais",
+        "price": 2299.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "v80s",
+        "name": "Mesa de Som Behringer Xenyx X1222USB",
+        "description": "Mesa analógica 12 canais com saída USB",
+        "category": "Áudio",
+        "price": 1899.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "w91t",
+        "name": "Violino Elétrico NS Design NXTa",
+        "description": "Violino elétrico 4 cordas com captação ativa",
+        "category": "Instrumentos Musicais",
+        "price": 8999.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "x02u",
+        "name": "Baixo Acústico Ibanez PCBE12",
+        "description": "Baixo acústico-elétrico 4 cordas",
+        "category": "Instrumentos Musicais",
+        "price": 3299.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "y13v",
+        "name": "Harpa de 36 Cordas Stagg LH36-SBM",
+        "description": "Harpa paraguaia com cordas de náilon e corpo em mogno",
+        "category": "Instrumentos Musicais",
+        "price": 4299.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "z24w",
+        "name": "Gravador Portátil Zoom H6",
+        "description": "Gravador multipista com microfones intercambiáveis",
+        "category": "Estúdio",
+        "price": 2799.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "a35x",
+        "name": "Pandeiro Profissional LP Aspire",
+        "description": "Pandeiro com jingles de aço e couro ajustável",
+        "category": "Percussão",
+        "price": 189.90,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "b46y",
+        "name": "Equalizador Gráfico DBX 231s",
+        "description": "Equalizador de 31 bandas para sistemas de PA",
+        "category": "Áudio",
+        "price": 1199.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "c57z",
+        "name": "Guitarra 7 Cordas Schecter Omen-7",
+        "description": "Guitarra para metal com captadores passivos",
+        "category": "Instrumentos Musicais",
+        "price": 4599.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "d68a",
+        "name": "Processador de Efeitos TC Helicon VoiceLive 3",
+        "description": "Processador vocal com harmonizador e loops",
+        "category": "Áudio",
+        "price": 3899.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "e79b",
+        "name": "Clarinete Buffet Crampon Prodige",
+        "description": "Clarinete Sib em resina para estudantes",
+        "category": "Instrumentos Musicais",
+        "price": 3699.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "f80c",
+        "name": "Amplificador para Baixo Ampeg BA-110",
+        "description": "Amplificador 40W com entrada para fones",
+        "category": "Áudio",
+        "price": 2499.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "g91d",
+        "name": "Triângulo Profissional com Baqueta",
+        "description": "Triângulo musical em aço carbono",
+        "category": "Percussão",
+        "price": 79.90,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      },
+      {
+        "id": "h02e",
+        "name": "Interface de Áudio Universal Audio Apollo Twin",
+        "description": "Interface Thunderbolt com DSP integrado",
+        "category": "Estúdio",
+        "price": 8999.00,
+        "image": "https://cdn.awsli.com.br/600x600/2751/2751959/produto/275440595/produto-teste-apenas-amostra-b64b7fdd-er1doerdho.png"
+      }
+    ]
+  }
