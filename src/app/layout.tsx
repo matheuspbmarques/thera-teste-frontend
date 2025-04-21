@@ -19,10 +19,10 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+	const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
 	return (
-		<html lang="pt-br">
+		<html lang="pt-br" className={theme}>
 			<head>
 				<title>Project</title>
 			</head>
@@ -30,7 +30,7 @@ export default function RootLayout({
 				<ThemeContext.Provider
 					value={{ theme, setTheme }}
 				>
-					<body className={`bg-slate-800 ${poppins.className} ${theme}`}>
+					<body className={`${poppins.className} bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-100`}>
 						{children}
 					</body>
 				</ThemeContext.Provider>

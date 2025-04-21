@@ -125,11 +125,11 @@ export default function Home() {
 						>
 							<input
 								type="search"
-								className="flex-1 py-2 pl-2 outline-none min-w-0"
+								className="flex-1 py-2 pl-2 outline-none min-w-0 placeholder-gray-400 dark:text-slate-800"
 								placeholder="Procurar..."
 								{...searchForm.register.inputText('search')}
 							/>
-							<button type="submit" className="p-2 hover:text-blue-700 duration-300">
+							<button type="submit" className="p-2 hover:text-blue-700 duration-300 text-gray-400">
 								<Search />
 							</button>
 						</form>
@@ -141,7 +141,7 @@ export default function Home() {
 								display: showFilterModal ? 'flex' : 'none'
 							}}>
 								<form
-									className="bg-white p-4 rounded-2xl m-auto w-full flex flex-col gap-4"
+									className="bg-white p-4 rounded-2xl m-auto w-full flex flex-col gap-4 dark:bg-slate-800"
 									onSubmit={filterForm.handleOnSubmit(submitFilter)}
 								>
 									<header className="flex items-center">

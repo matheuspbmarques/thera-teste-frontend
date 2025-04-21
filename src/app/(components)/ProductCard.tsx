@@ -27,7 +27,7 @@ export default function ProductCard({
                     className="absolute top-1/2 left-1/2 -translate-1/2"
                 />
             </div>
-            <div className="flex flex-col items-start p-2 w-full flex-1">
+            <div className="flex flex-col items-start p-2 w-full flex-1 dark:text-slate-800">
                 <p className="font-bold">{name}</p>
                 <p className="text-left text-sm flex-1">{description}</p>
                 <p className="text-left mt-2">{parseToRealString(price)}</p>

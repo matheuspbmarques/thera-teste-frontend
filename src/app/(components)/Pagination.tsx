@@ -43,14 +43,14 @@ export default function Pagination ({
     return (
         <div className="mt-6 flex justify-center gap-2">
             {((currentPage && pagesTotal) && currentPage > 1) && <button
-                className="text-slate-800 rounded-lg p-2 outline outline-gray-300 hover:bg-blue-700 hover:text-white duration-300 cursor-pointer"
+                className="text-slate-800 rounded-lg p-2 outline outline-gray-300 hover:bg-blue-700 hover:text-white duration-300 cursor-pointer hover:outline-none dark:text-slate-100"
                 onClick={() => (currentPage && onChangePage) && onChangePage(currentPage - 1)}
             >
                 <ChevronLeft />
             </button>}
             { renderPagesNumbers }
             {((currentPage && pagesTotal) && currentPage < pagesTotal) && <button
-                className="text-slate-800 rounded-lg p-2 outline outline-gray-300 hover:bg-blue-700 hover:text-white duration-300 cursor-pointer"
+                className="text-slate-800 rounded-lg p-2 outline outline-gray-300 hover:bg-blue-700 hover:text-slate-100 hover:outline-none duration-300 cursor-pointer dark:text-slate-100"
                 onClick={() => (currentPage && onChangePage) && onChangePage(currentPage + 1)}
             >
                 <ChevronRight />

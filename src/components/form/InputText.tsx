@@ -28,7 +28,7 @@ export default function InputText ({
                 type="text"
                 placeholder={placeholder}
                 {...register}
-                className="bg-white p-2 rounded-lg outline outline-gray-300 hover:outline-black focus:outline-blue-700 duration-300"
+                className="bg-white p-2 rounded-lg outline outline-gray-300 hover:outline-black focus:outline-blue-700 duration-300 dark:text-slate-800"
                 style={errorMessages ? inputError : undefined}
             />
             { renderErrorMessages }

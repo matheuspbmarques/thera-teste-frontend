@@ -27,7 +27,7 @@ export default function InputSelect({
         return (
             <li
                 key={index}
-                className="p-2 border-gray-200 hover:bg-blue-100 duration-300"
+                className="p-2 border-gray-200 hover:bg-blue-100 duration-300 dark:text-slate-800"
                 style={{
                     borderTop: index > 0 ? 1 : undefined
                 }}
@@ -59,7 +59,7 @@ export default function InputSelect({
                             register?.onSelect(undefined)
                             setValueSelect(undefined);
                         }}>
-                            <X />
+                            <X className="dark:text-gray-400" />
                         </div>
                         :
                         <div className="p-2">

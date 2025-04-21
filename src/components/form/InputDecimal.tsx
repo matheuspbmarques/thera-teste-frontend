@@ -26,7 +26,7 @@ export default function InputDecimal ({
             <input
                 type="text"
                 placeholder={placeholder}
-                className="bg-white p-2 outline outline-gray-300 rounded-lg hover:outline-black focus:outline-blue-700 duration-300 w-full"
+                className="bg-white p-2 outline outline-gray-300 rounded-lg hover:outline-black focus:outline-blue-700 duration-300 w-full placeholder-gray-400 dark:text-slate-800"
                 style={errorMessages ? inputError : undefined}
                 {...register}
             />
