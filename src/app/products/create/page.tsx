@@ -3,7 +3,7 @@
 import InputText from "@/components/form/InputText";
 import Button from "@/components/ui/Button";
 import H1 from "@/components/ui/H1";
-import { Save } from 'react-feather';
+import { Home, Save } from 'react-feather';
 import TextArea from "@/components/form/Textarea";
 import InputDecimal from "@/components/form/InputDecimal";
 import useForm, { UseFormCheck } from "@/hooks/useForm";
@@ -49,7 +49,7 @@ const formCheck: UseFormCheck<Form> = {
     }
 };
 
-export default function ProductsCreate () {
+export default function ProductsCreate() {
     const router = useRouter();
 
     const [successMessage, setSuccessMessage] = useMessage(5000);
@@ -69,7 +69,12 @@ export default function ProductsCreate () {
             <main className="max-w-3xl mx-auto">
                 <header className="flex justify-between mb-4">
                     <H1>Cadastrar Produto</H1>
-                    <Button onClick={() => router.push(routes.index.route)}>Início</Button>
+                    <Button
+                        onClick={() => router.push(routes.index.route)}
+                        startIcon={<Home />}
+                    >
+                        Início
+                    </Button>
                 </header>
                 <div className="flex items-center gap-4">
                     <div className="hidden sm:flex sm:flex-1 sm:h-80 sm:items-center sm:justify-center">
@@ -124,6 +129,6 @@ export default function ProductsCreate () {
                 </div>
             </main>
         </div>
-        {successMessage && <Alert color="success" onClose={() => setSuccessMessage(undefined)}>{ successMessage }</Alert>}
+        {successMessage && <Alert color="success" onClose={() => setSuccessMessage(undefined)}>{successMessage}</Alert>}
     </>)
 }
