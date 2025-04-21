@@ -64,7 +64,7 @@ export default function Home() {
 		}
 	});
 
-	const getProducts = useCallback((searchFilter?:Partial<SearchForm> & Partial<FilterForm>) => {
+	const getProducts = useCallback((searchFilter?: Partial<SearchForm> & Partial<FilterForm>) => {
 		api.get<JsonServerPaginateReturn<ProductsGetProductsResponse>>("/products", {
 			params: {
 				'price_gte': searchFilter?.minPrice,
@@ -88,12 +88,12 @@ export default function Home() {
 		getProducts();
 	}, [getProducts]);
 
-	function submitSearch({ search }:SearchForm) {
+	function submitSearch({ search }: SearchForm) {
 		getProducts({ search });
 		setCurrentPage(1);
 	};
 
-	function submitFilter({ minPrice, maxPrice, priceOrder }:FilterForm) {
+	function submitFilter({ minPrice, maxPrice, priceOrder }: FilterForm) {
 		getProducts({ minPrice, maxPrice, priceOrder });
 		setShowFilterModal(false)
 		setCurrentPage(1);
@@ -199,7 +199,9 @@ export default function Home() {
 									register={filterForm.register.inputSelect('priceOrder')}
 								/>
 							</div>
-							<Button type="submit">Filtrar</Button>
+							<Button type="submit" startIcon={<Filter />}>
+								<span>Filtrar</span>
+							</Button>
 						</form>
 					</div>
 				</header>
