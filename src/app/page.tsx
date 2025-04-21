@@ -114,9 +114,15 @@ export default function Home() {
 						<H1>Meus Produtos</H1>
 						<IconButton
 							onClick={() => router.push(routes.products.create.route)}
+							className="sm:hidden"
 						>
 							<Plus />
 						</IconButton>
+						<Button
+							startIcon={<Plus />}
+							onClick={() => router.push(routes.products.create.route)}
+							className="hidden sm:flex"
+						>Produto</Button>
 					</div>
 					<div className="flex sm:flex-col gap-2">
 						<form
